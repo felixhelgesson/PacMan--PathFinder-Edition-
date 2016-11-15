@@ -38,27 +38,30 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AStarProgram.cs" />
+    <Compile Include="HighScoreText.cs" />
+    <Compile Include="Pathfinding\AStarProgram.cs" />
     <Compile Include="Button.cs" />
-    <Compile Include="Cherry.cs" />
-    <Compile Include="Food.cs" />
-    <Compile Include="Food_placement.cs" />
+    <Compile Include="Map-Objects\Cherry.cs" />
+    <Compile Include="Highscore\Entry.cs" />
+    <Compile Include="Map-Objects\Food.cs" />
+    <Compile Include="Map\Food_placement.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Game_objects.cs" />
-    <Compile Include="Ghost.cs" />
+    <Compile Include="Enemies\Ghost.cs" />
+    <Compile Include="Highscore\HashTable.cs" />
     <Compile Include="Input.cs" />
-    <Compile Include="MapManager.cs" />
-    <Compile Include="Node.cs" />
-    <Compile Include="NodeState.cs" />
-    <Compile Include="pacman.cs" />
-    <Compile Include="PathFinder.cs" />
+    <Compile Include="Map\MapManager.cs" />
+    <Compile Include="Pathfinding\Node.cs" />
+    <Compile Include="Pathfinding\NodeState.cs" />
+    <Compile Include="Pac-Man\pacman.cs" />
+    <Compile Include="Pathfinding\PathFinder.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchParameters.cs" />
-    <Compile Include="Tiles.cs" />
-    <Compile Include="Wall.cs" />
+    <Compile Include="Pathfinding\SearchParameters.cs" />
+    <Compile Include="Map\Tiles.cs" />
+    <Compile Include="Map\Wall.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

@@ -16,7 +16,8 @@ namespace new_pacman
     {
         Start,
         Playing,
-        Gameover
+        Gameover,
+        Highscore
     }
 
     public enum Direction
@@ -37,6 +38,7 @@ namespace new_pacman
         Texture2D food_tex;
         Texture2D ghost_tex;
         Texture2D start_background;
+        Texture2D whiteBackground;
         Rectangle pac_rec;
         Rectangle tile_rec;
         Rectangle food_rec;
@@ -46,6 +48,7 @@ namespace new_pacman
         Rectangle pac_hitrec;
         Rectangle ghost_hitrec;
         Vector2 position;
+
         SpriteFont font;
         Food_placement food_p;
         List<string> map = new List<string>();
@@ -62,6 +65,10 @@ namespace new_pacman
         int height;
         int width;
         Gamestate cG = Gamestate.Start;
+        HashTable hashTable;
+        HighScoreText highScoreText;
+
+
 
         public Game1()
         {
@@ -82,13 +89,15 @@ namespace new_pacman
 
 
             start_background = Content.Load<Texture2D>("pacman_arcade.png");
+            whiteBackground = Content.Load<Texture2D>("wB");
+
             font = Content.Load<SpriteFont>("lives");
             //AStar = new AStarProgram();
             food_p = new Food_placement(food_tex, position, food_rec, food_hitrec, false);
             tiles = new Tiles(tile_tex, tile_rec, tile_hitrec, position);
-
+            hashTable = new HashTable(10);
             StreamReader sr = new StreamReader(@"MyMap.txt");
-
+            highScoreText = new HighScoreText();
             while (!sr.EndOfStream)
             {
                 map.Add(sr.ReadLine());
@@ -143,11 +152,6 @@ namespace new_pacman
             graphics.ApplyChanges();
 
 
-            food_p.Load(Content);
-            tiles.Load(Content);
-            
-            pac.Load(Content);
-            ghost.Load(Content);
 
             base.Initialize();
         }
@@ -155,6 +159,11 @@ namespace new_pacman
 
         protected override void LoadContent()
         {
+            food_p.Load(Content);
+            tiles.Load(Content);
+            
+            pac.Load(Content);
+            ghost.Load(Content);
 
 
             spriteBatch = new SpriteBatch(GraphicsDevice);
@@ -187,6 +196,7 @@ namespace new_pacman
                     ghost.Update(gameTime);
                     pac.Checkghost(ghost.GetPos());
 
+
                     if (pac.dead == true)
                     {
                         dead = false;
@@ -201,6 +211,8 @@ namespace new_pacman
 
                     break;
                 case Gamestate.Gameover:
+                    highScoreText.TextUpdate(gameTime);
+                    
                     break;
                 default:
                     break;
@@ -211,7 +223,6 @@ namespace new_pacman
             base.Update(gameTime);
         }
 
-        
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -240,14 +251,28 @@ namespace new_pacman
             }
             if (cG == Gamestate.Gameover)
             {
-                spriteBatch.Draw(start_background, new Rectangle(0, 0, width, height), Color.White);
-                spriteBatch.DrawString(font, "Ending score;" + score.ToString(), new Vector2(10, height - 50), Color.Black);
+                spriteBatch.Draw(whiteBackground, new Rectangle(0, 0, width, height), Color.White);
+                spriteBatch.DrawString(font,"Your Score:" + score.ToString(), new Vector2(10, height - 50), Color.Black);
+                hashTable.Put(highScoreText.name, score);
+                spriteBatch.DrawString(font, highScoreText.name, new Vector2(10, height - 25), Color.Black);
+                if (Keyboard.GetState().IsKeyDown(Keys.W))
+                {
+                    cG = Gamestate.Highscore;
+                }
+            }
+
+            if (cG == Gamestate.Highscore)
+            {
+                spriteBatch.Draw(whiteBackground, new Rectangle(0, 0, width, height), Color.White);
+                spriteBatch.DrawString(font, highScoreText.name + hashTable.Get(highScoreText.name), new Vector2(10, height - 50), Color.Black);
+                Console.WriteLine(hashTable.Get(highScoreText.name));
+                 
             }
 
             spriteBatch.End();
 
             // TODO: Add your drawing code here
-
+            
             base.Draw(gameTime);
         }
 
