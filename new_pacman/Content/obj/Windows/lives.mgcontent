@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/felix/OneDrive/Dokument/Visual Studio 2015/Projects/new_pacman/new_pacman/Content/lives.spritefont</SourceFile>
+  <SourceFile>E:/Onedrive/Dokument/Visual Studio 2015/Projects/new_pacman/PacMan--PathFinder-Edition-/new_pacman/Content/lives.spritefont</SourceFile>
   <SourceTime>2016-03-30T08:36:08+02:00</SourceTime>
-  <DestFile>C:/Users/felix/OneDrive/Dokument/Visual Studio 2015/Projects/new_pacman/new_pacman/Content/bin/Windows/lives.xnb</DestFile>
-  <DestTime>2016-11-11T13:37:11.4755628+01:00</DestTime>
+  <DestFile>E:/Onedrive/Dokument/Visual Studio 2015/Projects/new_pacman/PacMan--PathFinder-Edition-/new_pacman/Content/bin/Windows/lives.xnb</DestFile>
+  <DestTime>2016-11-14T19:48:03.2897913+01:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2016-03-30T08:36:08+02:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

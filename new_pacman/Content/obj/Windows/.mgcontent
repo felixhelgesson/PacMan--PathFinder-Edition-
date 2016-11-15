@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/felix/OneDrive/Dokument/Visual Studio 2015/Projects/new_pacman/new_pacman/Content/lives.spritefont</File>
-    <File>C:/Users/felix/OneDrive/Dokument/Visual Studio 2015/Projects/new_pacman/new_pacman/Content/wB.jpg</File>
+    <File>E:/Onedrive/Dokument/Visual Studio 2015/Projects/new_pacman/PacMan--PathFinder-Edition-/new_pacman/Content/lives.spritefont</File>
+    <File>E:/Onedrive/Dokument/Visual Studio 2015/Projects/new_pacman/PacMan--PathFinder-Edition-/new_pacman/Content/wB.jpg</File>
   </SourceFiles>
 </SourceFileCollection>
