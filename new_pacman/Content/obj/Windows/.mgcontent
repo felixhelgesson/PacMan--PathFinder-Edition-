@@ -4,7 +4,6 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>E:/Onedrive/Dokument/Visual Studio 2015/Projects/new_pacman/PacMan--PathFinder-Edition-/new_pacman/Content/lives.spritefont</File>
-    <File>E:/Onedrive/Dokument/Visual Studio 2015/Projects/new_pacman/PacMan--PathFinder-Edition-/new_pacman/Content/wB.jpg</File>
+    <File>C:/Users/Casper/Desktop/new_pacman/new_pacman/Content/lives.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>
